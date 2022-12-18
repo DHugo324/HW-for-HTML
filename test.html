@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>測試jquey的ajax方法</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #test {
+      padding: 0;
+      margin: 0 auto;
+      width: 200px;
+      height: 400px;
+    }
+
+    #test li {
+      list-style: none;
+      width: 200px;
+      text-align: center;
+      height: 30px;
+      line-height: 30px;
+      border: 1px dashed lightgrey;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="test"></div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script>
+    $(function () {
+      alert(1);
+      $.ajax({
+        //請求方式為get
+        type: "GET",
+        //json檔案位置
+        url: "test.json",
+        //返回資料格式為json
+        dataType: "json",
+        //請求成功完成後要執行的方法
+        success: function (data) {
+          //使用$.each方法遍歷返回的資料date,插入到id為#result中
+          var str = "<ul>";
+          $.each(data.list, function (i, n) {
+            str += "<li>" + n["item"] + "</li>";
+          })
+          str += "</ul>";
+          $("#test").append(str);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
