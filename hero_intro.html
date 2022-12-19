@@ -134,16 +134,12 @@
     });
     function intro(selected_hero_idx) {
       window.alert(selected_hero_idx);
+      document.getElementById("infoModal").showModal();
     }
-    let btn = document.querySelector("#show");
-    let infoModal = document.querySelector("#infoModal");
-    let clo = document.querySelector("#close");
-    btn.addEventListener("click", function () {
-      infoModal.showModal();
-    })
-    clo.addEventListener("click", function () {
-      infoModal.close();
-    })
+    function c() {
+      document.getElementById("infoModal").close();
+    }
+    let clo = document.querySelector("#close").addEventListener("click", c, false);
   </script>
 </head>
 
