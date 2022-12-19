@@ -48,11 +48,11 @@
           //使用$.each方法遍歷返回的資料date,插入到id為#result中
           console.log(data.list);
           console.log(data.hero);
-          // const obj = JSON.parse(data[0]);
-          // console.log(obj);
           var str = "<ul>";
           $.each(data.hero, function (i, n) {
             console.log(n);
+            const obj = JSON.parse(n);
+            console.log(obj);
             str += "<li>" + n["name"] + "</li>";
           })
           str += "</ul>";
