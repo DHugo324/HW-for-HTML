@@ -3,8 +3,80 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>測試jquey的ajax方法</title>
+  <title>測試</title>
   <style>
+    dialog {
+      border: none;
+      box-shadow: 0 2px 6px #ccc;
+      border-radius: 10px;
+    }
+
+    dialog::backdrop {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      width: fit-content;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: fit-content;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content div {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content div:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     * {
       padding: 0;
       margin: 0;
@@ -31,18 +103,14 @@
     $(function () {
       //alert(1);
       $.ajax({
-        //請求方式為get
         type: "GET",
-        //json檔案位置
         url: "hero_intro.json",
-        //返回資料格式為json
         dataType: "json",
-        //請求成功完成後要執行的方法
         success: function (data) {
           console.log(data);
-          //使用$.each方法遍歷返回的資料date,插入到id為#result中
           console.log(data.list);
           console.log(data.hero);
+          //使用$.each方法遍歷返回的資料date,插入到id為#result中
           var str = "<ul>";
           $.each(data.hero, function (i, n) {
             console.log(n);
@@ -64,11 +132,26 @@
         }
       });
     });
+    function intro(selected_hero_idx) {
+      window.alert(selected_hero_idx);
+    }
   </script>
 </head>
 
 <body>
-
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn">英雄介紹</button>
+      <div class="dropdown-content">
+        <div onclick="intro(1)">hero1</div>
+        <div>hero2</div>
+      </div>
+    </div>
+  </div>
+  <dialog id="infoModal">
+    <p>這是 html 的 dialog!!</p>
+    <button id="close">close</button>
+  </dialog>
   <div id="test"></div>
 
 </body>
