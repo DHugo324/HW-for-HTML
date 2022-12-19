@@ -46,14 +46,16 @@
         success: function (data) {
           console.log(data);
           //使用$.each方法遍歷返回的資料date,插入到id為#result中
-          var str = "<ul>";
-          $.each(data.list, function (i, n) {
-            console.log(n);
-            str += "<li>" + n["name"] + "</li>";
-          })
-          str += "</ul>";
+          const obj = JSON.parse(data);
+          console.log(obj);
+          // var str = "<ul>";
+          // $.each(data.list, function (i, n) {
+          //   console.log(n);
+          //   str += "<li>" + n["name"] + "</li>";
+          // })
+          // str += "</ul>";
           //console.log(str);
-          $("#test").append(str);
+          // $("#test").append(str);
         },
         error: function (xhr) {
           var str = "<ul>";

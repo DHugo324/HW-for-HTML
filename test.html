@@ -46,14 +46,11 @@
         success: function (data) {
           console.log(data);
           //使用$.each方法遍歷返回的資料date,插入到id為#result中
-          const obj = JSON.parse(data);
-          console.log(obj);
-          // var str = "<ul>";
-          // $.each(data.list, function (i, n) {
-          //   console.log(n);
-          //   str += "<li>" + n["item"] + "</li>";
-          // })
-          // str += "</ul>";
+          var str = "<ul>";
+          $.each(data.list, function (i, n) {
+            str += "<li>" + n["item"] + "</li>";
+          })
+          str += "</ul>";
           $("#test").append(str);
         }
       });
