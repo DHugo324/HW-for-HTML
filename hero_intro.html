@@ -135,6 +135,15 @@
     function intro(selected_hero_idx) {
       window.alert(selected_hero_idx);
     }
+    let btn = document.querySelector("#show");
+    let infoModal = document.querySelector("#infoModal");
+    let close = document.querySelector("#close");
+    btn.addEventListener("click", function () {
+      infoModal.showModal();
+    })
+    close.addEventListener("click", function () {
+      infoModal.close();
+    })
   </script>
 </head>
 
@@ -148,6 +157,7 @@
       </div>
     </div>
   </div>
+  <button id="show">show</button>
   <dialog id="infoModal">
     <p>這是 html 的 dialog!!</p>
     <button id="close">close</button>
