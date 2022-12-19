@@ -139,7 +139,7 @@
     function c() {
       document.getElementById("infoModal").close();
     }
-    let clo = document.querySelector("#close").addEventListener("click", c, false);
+    let clo = document.getElementById("clo").addEventListener("click", c, false);
   </script>
 </head>
 
@@ -156,7 +156,7 @@
   <button id="show">show</button>
   <dialog id="infoModal">
     <p>這是 html 的 dialog!!</p>
-    <button id="close">close</button>
+    <button id="clo">close</button>
   </dialog>
   <div id="test"></div>
 
