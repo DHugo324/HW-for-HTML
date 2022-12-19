@@ -45,11 +45,11 @@
         //請求成功完成後要執行的方法
         success: function (data) {
           //使用$.each方法遍歷返回的資料date,插入到id為#result中
-          var str = "";
+          var str = "<ul>";
           $.each(data.list, function (i, n) {
-            str += n["name"];
+            str += "<li>" + n["name"] + "</li>";
           })
-          str += "";
+          str += "</ul>";
           $("#test").append(str);
         }
       });
