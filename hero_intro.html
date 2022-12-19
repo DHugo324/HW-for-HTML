@@ -51,8 +51,8 @@
           var str = "<ul>";
           $.each(data.hero, function (i, n) {
             console.log(n);
-            const obj = JSON.parse(n);
-            console.log(obj);
+            // const obj = JSON.parse(n);
+            console.log(n.name);
             str += "<li>" + n["name"] + "</li>";
           })
           str += "</ul>";
