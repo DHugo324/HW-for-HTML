@@ -34,7 +34,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script>
     $(function () {
-      alert(1);
+      //alert(1);
       $.ajax({
         //請求方式為get
         type: "GET",
@@ -48,6 +48,15 @@
           var str = "<ul>";
           $.each(data.list, function (i, n) {
             str += "<li>" + n["name"] + "</li>";
+          })
+          str += "</ul>";
+          console.log(str);
+          $("#test").append(str);
+        },
+        error: function (xhr) {
+          var str = "<ul>";
+          $.each(data.list, function (i, n) {
+            str += "<li>" + "Error" + "</li>";
           })
           str += "</ul>";
           $("#test").append(str);
