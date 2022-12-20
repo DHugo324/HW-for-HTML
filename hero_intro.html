@@ -118,19 +118,21 @@
           console.log(data);
           console.log(data.hero);
           //使用$.each方法遍歷返回的資料date,插入到id為#result中
-          var str = "<ul>";
+          var str = "<div>";
           $.each(data.hero, function (i, n) {
             if (i == selected_hero_idx) {
               console.log(i);
               console.log(n);
               // const obj = JSON.parse(n);
               console.log(n.name);
-              str += "<li>" + n["name"] + "</li>";
+              str += "<p class=hero>" + n["name"] + "</p>";
+              str += "<p class=from>" + n["from"] + "</p>";
+              str += "<p class=intro>" + n["intro"] + "</p>";
             }
           })
-          str += "</ul>";
+          str += "</div>";
           //console.log(str);
-          $("#test").append(str);
+          document.getElementById("test").innerHTML = str;
         },
         error: function (xhr) {
           var str = "<ul>";
