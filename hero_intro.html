@@ -108,7 +108,7 @@
   </style>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script>
-    $(function () {
+    function call_intro(selected_hero_idx) {
       //alert(1);
       $.ajax({
         type: "GET",
@@ -120,11 +120,13 @@
           //使用$.each方法遍歷返回的資料date,插入到id為#result中
           var str = "<ul>";
           $.each(data.hero, function (i, n) {
-            console.log(i);
-            console.log(n);
-            // const obj = JSON.parse(n);
-            console.log(n.name);
-            str += "<li>" + n["name"] + "</li>";
+            if (i == selected_hero_idx) {
+              console.log(i);
+              console.log(n);
+              // const obj = JSON.parse(n);
+              console.log(n.name);
+              str += "<li>" + n["name"] + "</li>";
+            }
           })
           str += "</ul>";
           //console.log(str);
@@ -139,9 +141,10 @@
           $("#test").append(str);
         }
       });
-    });
+    }
     function intro(selected_hero_idx) {
       console.log("click" + selected_hero_idx);
+      call_intro(selected_hero_idx);
       document.getElementById("infoModal").showModal();
     }
     function c() {
