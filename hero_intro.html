@@ -89,19 +89,23 @@
       margin: 0;
     }
 
-    #intro_main {
+    .intro_main {
       padding: 0;
       margin: 0 auto;
       width: 90%;
     }
 
-    #intro_main .hero {
+    .intro_main .hero {
       font-weight: bold;
       color: rgb(255, 140, 0);
     }
 
-    #intro_main .clo {
+    .intro_main .clo {
       background-color: white;
+    }
+
+    .intro_sub {
+      width: 80%;
     }
   </style>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -157,15 +161,17 @@
   <dialog id="infoModal">
     <img src="x.png" alt="close" title="關閉" id="clo" height="40px" width="40px" onclick="c()"
       style="float: right; display: inline;">
-    <div id="intro_main">
+    <div class="intro_main">
       <h1 style="display: inline;">英雄介紹</h1>
-      <h2 class="hero" id="heroname"></h2>
-      <p style="width: 80%;">
-        <img src="loc.png" alt="loc" title="loc" height="16px" width="16px">
-        <span class="from" id="from"></span>
-      </p>
-      <h3>介紹</h3>
-      <p class="intro" id="intro" style="width: 80%;"></p>
+      <div class="intro_sub">
+        <h2 class="hero" id="heroname"></h2>
+        <p style="width: 80%;">
+          <img src="loc.png" alt="loc" title="loc" height="16px" width="16px">
+          <span class="from" id="from"></span>
+        </p>
+        <h3>介紹</h3>
+        <p class="intro" id="intro" style="width: 80%;"></p>
+      </div>
     </div>
   </dialog>
 </body>
