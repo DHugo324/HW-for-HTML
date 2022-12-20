@@ -116,21 +116,20 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script>
     function call_intro(selected_hero_idx) {
-      //alert(1);
+      // console.log(selected_hero_idx);
       $.ajax({
         type: "GET",
         url: "hero_intro.json",
         dataType: "json",
         success: function (data) {
-          console.log(data);
-          console.log(data.hero);
+          // console.log(data);
+          // console.log(data.hero);
           //使用$.each方法遍歷返回的資料date,插入到id為#result中
           $.each(data.hero, function (i, n) {
             if (i == selected_hero_idx) {
-              console.log(i);
-              console.log(n);
-              // const obj = JSON.parse(n);
-              console.log(n.name);
+              // console.log(i);
+              // console.log(n);
+              // console.log(n.name);
               document.getElementById("heroname").innerHTML = n["name"];
               document.getElementById("from").innerHTML = n["from"];
               document.getElementById("intro").innerHTML = n["intro"];
@@ -207,7 +206,7 @@
           <img src="loc.png" alt="loc" title="loc" height="16px" width="16px">
           <span id="from"></span>
         </p>
-        <h3>介紹</h3>
+        <h3>簡介</h3>
         <p class="intro" id="intro" style="text-indent: 1em; text-align: justify;"></p>
       </div>
     </div>
