@@ -89,19 +89,18 @@
       margin: 0;
     }
 
-    #test {
+    #intro_main {
       padding: 0;
       margin: 0 auto;
-      width: 80%;
-      height: 80%;
+      width: 90%;
     }
 
-    #test .hero {
+    #intro_main .hero {
       font-weight: bold;
       color: rgb(255, 140, 0);
     }
 
-    #test .clo {
+    #intro_main .clo {
       background-color: white;
     }
   </style>
@@ -128,16 +127,9 @@
               document.getElementById("intro").innerHTML = n["intro"];
             }
           })
-          //console.log(str);
-          document.getElementById("test").innerHTML = str;
         },
         error: function (xhr) {
-          var str = "<ul>";
-          $.each(data.list, function (i, n) {
-            str += "<li>" + "Error" + "</li>";
-          })
-          str += "</ul>";
-          $("#test").append(str);
+          window.alert("Error");
         }
       });
     }
@@ -165,7 +157,7 @@
   <dialog id="infoModal">
     <h1 style="display: inline;">英雄介紹<img src="x.png" alt="close" title="關閉" id="clo" height="40px" width="40px"
         onclick="c()" style="float: right;"></h1>
-    <div id="test">
+    <div id="intro_main">
       <h2 class="hero" id="heroname"></h2>
       <p>
         <img src="loc.png" alt="loc" title="loc" height="16px" width="16px">
