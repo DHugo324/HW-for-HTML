@@ -95,6 +95,7 @@
     }
 
     #test .hero {
+      font-weight: bold;
       color: rgb(255, 140, 0);
     }
 
@@ -121,7 +122,7 @@
               console.log(n);
               // const obj = JSON.parse(n);
               console.log(n.name);
-              str += "<p class=hero>" + n["name"] + "</p>";
+              str += "<h2 class=hero>" + n["name"] + "</h2>";
               str += "<p class=from>" + n["from"] + "</p>";
               str += "<p class=intro>" + n["intro"] + "</p>";
             }
@@ -162,7 +163,7 @@
     </div>
   </div>
   <dialog id="infoModal">
-    <p>這是 html 的 dialog!!</p>
+    <h1>英雄介紹</h1>
     <div id="test"></div>
     <button id="clo" onclick="c()">close</button>
   </dialog>
