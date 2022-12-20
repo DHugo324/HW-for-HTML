@@ -103,10 +103,6 @@
       color: rgb(255, 140, 0);
     }
 
-    .intro_main .clo {
-      background-color: white;
-    }
-
     .intro_sub {
       padding: 0;
       margin: 0 auto;
@@ -124,7 +120,7 @@
         success: function (data) {
           // console.log(data);
           // console.log(data.hero);
-          //使用$.each方法遍歷返回的資料date,插入到id為#result中
+          //使用$.each方法遍歷返回的資料
           $.each(data.hero, function (i, n) {
             if (i == selected_hero_idx) {
               // console.log(i);
@@ -146,7 +142,7 @@
       call_intro(selected_hero_idx);
       document.getElementById("infoModal").showModal();
     }
-    function c() {
+    function clo() {
       document.getElementById("infoModal").close();
     }
   </script>
@@ -196,7 +192,7 @@
     </div>
   </div>
   <dialog id="infoModal">
-    <img src="x.png" alt="close" title="關閉" id="clo" height="40px" width="40px" onclick="c()"
+    <img src="x.png" alt="close" title="關閉" id="clo" height="40px" width="40px" onclick="clo()"
       style="float: right; border: 1px solid rgb(255, 140, 0); display: inline;">
     <div class="intro_main">
       <h1 style="display: inline;">英雄介紹</h1>
