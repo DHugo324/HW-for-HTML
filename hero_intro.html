@@ -115,20 +115,17 @@
           console.log(data);
           console.log(data.hero);
           //使用$.each方法遍歷返回的資料date,插入到id為#result中
-          var str = "<div>";
           $.each(data.hero, function (i, n) {
             if (i == selected_hero_idx) {
               console.log(i);
               console.log(n);
               // const obj = JSON.parse(n);
               console.log(n.name);
-              str += "<h2 class=hero>" + n["name"] + "</h2>";
-              str += '<p class=from><img src="loc.png" alt="loc" title="loc" height="fix-content" width="fix-content">' + n["from"] + '</p>';
-              str += "<h3>介紹</h3>";
-              str += "<p class=intro>" + n["intro"] + "</p>";
+              document.getElementById("heroname").innerHTML = n["name"];
+              document.getElementById("from").innerHTML = n["from"];
+              document.getElementById("intro").innerHTML = n["intro"];
             }
           })
-          str += "</div>";
           //console.log(str);
           document.getElementById("test").innerHTML = str;
         },
@@ -165,7 +162,13 @@
   </div>
   <dialog id="infoModal">
     <h1>英雄介紹</h1>
-    <div id="test"></div>
+    <div id="test">
+      <h2 class="hero" id="heroname"> </h2>
+      <img src="loc.png" alt="loc" title="loc" height="1em" width="1em">
+      <p class="from" id="from"></p>
+      <h3>介紹</h3>;
+      <p class="intro" id="intro"></p>
+    </div>
     <button id="clo" onclick="c()">close</button>
   </dialog>
 </body>
